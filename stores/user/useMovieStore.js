@@ -1,7 +1,7 @@
 
 import { defineStore } from "pinia";
 import { getAllMovieByCinema, getMovieDetail, getScheduleByMovie } from '~/repositories/cinema/movieRepo';
-import { useCinemaStore } from "@/stores/user/useCinemaStore.js";
+import { useCinemaStore } from "~/stores/user/useCinemaStore.js";
 
 
 export const useMovieStore = defineStore({
@@ -35,7 +35,7 @@ export const useMovieStore = defineStore({
           }
           
         } catch (error) {  
-          alert(error.response.data)
+          // alert(error.response.data)
         }finally {
           this.isShowLoading = false;
         }

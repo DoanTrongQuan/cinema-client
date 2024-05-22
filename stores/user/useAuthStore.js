@@ -22,7 +22,7 @@ export const useAuthStore = defineStore({
         const res = await getHistoryBillUser()
         this.historyBill = res.data;
       } catch (error) {  
-        alert(error.res.data)
+
       }
   },
   async getProfileUser(){
@@ -30,7 +30,7 @@ export const useAuthStore = defineStore({
       const res = await getProfileUser()
       this.user = res.data;
     } catch (error) {  
-      alert(error.res.data)
+
     }
 },
 
