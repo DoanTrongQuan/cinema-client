@@ -6,6 +6,7 @@ import { useSyncCookieState } from '~/composables/useSyncCookieState';// import 
 export const useCinemaStore = defineStore({
   id: "cinemaStore",
   state: () => ({
+    
     // lấy giá trị từ cookie nếu không có thì mặc định là 'Beta Mỹ đình'
     nameOfCinema:  useCookie('nameOfCinema').value || 'Space Mỹ Đình',
 
@@ -26,13 +27,14 @@ export const useCinemaStore = defineStore({
   getters: {},
   actions: {
     async getAllCinemas  ()  {
+      
       for (const cinema of this.cinemas) {
         try {
             const address = cinema.address;
             const res = await getAllCinema(address);
             cinema.children = res.data; 
         } catch (error) {
-            // console.error('Error:', error);
+
         }
     }
     },

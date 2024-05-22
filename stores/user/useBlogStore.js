@@ -19,7 +19,7 @@ export const useBlogStore = defineStore({
           const res = await getAllBlog()
           this.blogs = res.data;
         } catch (error) {  
-          alert(error.response.data)
+
         }finally {
           useMovieStore().isShowLoading = false;
         }
@@ -30,7 +30,7 @@ export const useBlogStore = defineStore({
         const res = await getBlogDetail(data)
         this.blogDetail = res.data;
       } catch (error) {  
-        alert(error.response.data)
+
       }finally {
         useMovieStore().isShowLoading = false;
       }
