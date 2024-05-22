@@ -43,7 +43,7 @@ const showMovieDetail = (data) => {
 const active = ref(false);
 
 const tab = ref(null);
-const banner = ref([{ linkImage: 'https://files.betacorp.vn/cms/images/2024/04/03/1702x621-095427-030424-60.png' }, { linkImage: '/img/movie_galaxy.jpg' }]);
+const banner = ref([{ linkImage: '/img/image-caroseol.jpg' }, { linkImage: '/img/movie_galaxy.jpg' },{ linkImage: '/img/image-caroseol2.jpg'  }]);
 
 </script>
 
