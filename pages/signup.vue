@@ -97,7 +97,7 @@
 </template>
 
 <script setup>
-import { useSignup } from '~/composables/authentication/useSignup';
+
     
 
 const signupData = useSignup();
