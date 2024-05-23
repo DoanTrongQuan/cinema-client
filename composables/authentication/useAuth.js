@@ -17,7 +17,7 @@ export const useAuth = () => {
     handleSaveCookieAuth({})
     handleSaveCookieProfile({})
 
-    router.replace('/home')
+    router.replace('/')
   }
 
   async function onSubmit(event) {

@@ -51,7 +51,7 @@
   <div class="header !bg-white" style="position: sticky; top: 0; z-index: 51; cursor: pointer">
     <div class="my-0 mx-auto lg:w-[86%] py-7">
       <div class="grid grid-cols-12 items-center">
-          <a href="/home" class="lg:col-span-2 col-span-4 flex items-center justify-center lg:justify-start">
+          <a href="/" class="lg:col-span-2 col-span-4 flex items-center justify-center lg:justify-start">
           <img  
             src="/img/logo_cinema.png"
             class="w-full xl:max-w-[300px] sm:max-w-[150px] xs:max-w-[100px] object-cover duration-300 ease-in-out hover:opacity-100 hover:scale-110 hover:blur-0 hover:grayscale-0"

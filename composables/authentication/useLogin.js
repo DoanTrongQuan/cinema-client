@@ -29,7 +29,7 @@ export const useLogin = () => {
       const response = await authAsync.login(event.data);
 
 
-      let to = route.query.redirect ||'/home';   
+      let to = route.query.redirect ||'/';   
       
       router.replace(to)
 

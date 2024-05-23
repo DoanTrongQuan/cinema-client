@@ -34,6 +34,7 @@ export const useMovieStore = defineStore({
             }
           }
           
+          
         } catch (error) {  
           // alert(error.response.data)
         }finally {
