@@ -15,11 +15,11 @@ export const useLogin = () => {
   })
   
   const schema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Email is required'),
+    email: Yup.string().email('Email không đúng định dạng').required('Email là bắt buộc'),
 
     password: Yup.string()
-      .min(3, 'Password must be at least 3 characters')
-      .required('Password is required'),
+      .min(3, 'Mật khẩu phải chứa ít nhất 3 ký tự')
+      .required('Mật khẩu là bắt buộc'),
   });
 
 

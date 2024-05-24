@@ -67,7 +67,7 @@ import ForgotPassword from '~/components/ForgotPassword.vue';
 import eventBus from '~/utils/eventBus'
 
 const loginData = useLogin()
-
+const toast = useToast()
 const { state, schema, onSubmit } = loginData
 
 //khi sự kiện kích hoạt thì gửi sự kiện show_forgot_password sang component ForgotPassword

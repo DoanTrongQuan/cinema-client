@@ -16,7 +16,7 @@ export const useAuth = () => {
 
     handleSaveCookieAuth({})
     handleSaveCookieProfile({})
-
+    window.location.reload();
     router.replace('/')
   }
 
@@ -44,7 +44,7 @@ export const useAuth = () => {
 
         return response
       } catch (error) {
-        createToast({message:error.response.data,type:'error',time:3000,title:"Thất bại"})
+        createToast({message:"Tài khoản hoặc mật khẩu không chính xác",type:'error',time:3000,title:"Thất bại"})
         throw error;
       }
     },

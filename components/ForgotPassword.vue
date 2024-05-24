@@ -11,7 +11,7 @@ const {
     clear,
     isLoading
   } = useForgot()
-
+const toast = useToast()
 const isOpenForgotPassword =ref(false)
 
 // lấy giá trị true từ login.vue để mở dialog quên mật khẩu
@@ -41,13 +41,12 @@ eventBus.on('show_forgot_password',(value) => {
         </div>
         <div class = "py-3 px-4">
           <UForm v-if ="!isPasswordChanged" @submit="onSubmit">
-            <UFormGroup v-slot="{ error }"  :error="!email && responseError " >
               <UInput v-model="email" type="email"
+              required
               size="xl" style="border: 1px solid black !important;" 
-              placeholder="Enter email" :trailing-icon="error ? 'i-heroicons-exclamation-triangle-20-solid' : undefined"
+              placeholder="Email" 
               icon="i-heroicons-envelope">
               </UInput>
-          </UFormGroup>
           <button type = "submit" class="mt-4 px-1 py-2 w-full submit rounded">
             <v-progress-circular
               v-if = "isLoading"

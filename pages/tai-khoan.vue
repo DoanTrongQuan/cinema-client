@@ -86,6 +86,10 @@ import { useAuth } from '~/composables/authentication/useAuth';
 import { useAuthStore } from '~/stores/user/useAuthStore';
 const { onSubmit } = useAuth()
 
+
+definePageMeta({
+    middleware:'auth'
+})
 const authStore = useAuthStore()
 const password = reactive({
   oldPassword:'',

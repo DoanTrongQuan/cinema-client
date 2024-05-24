@@ -1,8 +1,9 @@
 <template>
-  <div class="snipcss-InXKz"><span class="border-l-4 border-solid border-[#034ea2] mr-2"></span>
-    <h1 class="text-xl inline-block uppercase font-bold">Ưu đãi</h1>
-  </div>
-  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto screen1390:max-w-screen-xl xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 py-7 px-4 lg:px-0">
+          <div class="border-b-2 max-w-[83.5%] mx-auto border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
+          <h1 class="mb-0 text-xl inline-block uppercase font-medium">Ưu đãi</h1>
+        </div>
+  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto screen1390:max-w-screen-xl xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 pb-7 px-4 lg:px-0">
+    
       <div class="py-4 flex xl:col-span-4 md:gap-[20px] justify-between md:justify-start flex-wrap snipcss-OAzJO">
         <a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/cine-voi-ca-cung---tu-tap-vui-coa-choi/"><img alt="Cine Với Cạ Cứng - Tụ Tập Vui &quot;Cóa Chời&quot;" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
       scale-100 blur-0 grayscale-0) style-F6g1j" src="https://cdn.galaxycine.vn/media/2024/5/24/500_1716521540457.jpg" id="style-F6g1j">

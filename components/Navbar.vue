@@ -38,11 +38,12 @@
             </div>
           </div>
           <div class="flex flex-col cursor-pointer">
-            <div @click="showAccout" class="my-2 font-normal hover:text-[#FF7614]">Thông tin cá nhân</div>
+            <div @click="showAccout" v-if = "isLogin" class="my-2 font-normal hover:text-[#FF7614]">Thông tin cá nhân</div>
             <NuxtLink to = "/blog"><div class="my-2 font-normal hover:text-[#FF7614]">Góc điện ảnh</div></NuxtLink>
             <div class="my-2 font-normal hover:text-[#FF7614]">Sự kiện/Khuyến mãi</div>
             <div class="my-2 font-normal hover:text-[#FF7614]">Rạp</div>
-            <div class="my-2 font-normal hover:text-[#FF7614]">Đăng xuất</div>
+            <div v-if="isLogin"  class="my-2 font-normal hover:text-[#FF7614]">Đăng xuất</div>
+            <div v-else @click = "login">Đăng nhập</div>
           </div>
         </div>
       </div>
@@ -58,10 +59,10 @@
           />
         </a>
 
-        <div class="lg:col-span-2 pl-2 col-span-4">
+        <div class="lg:col-span-2 pl-2 col-span-4 lg:flex lg:justify-center">
             <div
-              class="dropdown max-w-[150px] flex justify-center"
-              style="border-radius: 16px; border: 1px solid black"
+              class="dropdown "
+
             >
               <button
                 style="
@@ -69,10 +70,10 @@
                   font-size: 15px;
                   font-weight: bold;
                   font-family: Arial, Helvetica, sans-serif;
-                  width: 100%;
+                  width: auto;border-radius: 16px; border: 1px solid black;
                   align-items: center;
                 "
-                class="btn dropdown-toggle"
+                class="btn dropdown-toggle max-w-[200px] "
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
@@ -80,11 +81,11 @@
               >
                 {{ nameOfCinema }}
               </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <ul class="dropdown-menu absolute top-[38px] max-w-[230px]" aria-labelledby="dropdownMenuButton1">
                 <li
                   v-for="(cinema, i) in cinemas"
                   :key="i"
-                  class="dropdown-item"
+                  class="dropdown-item "
                   style="border-bottom: 1px solid #efefef"
                 >
                   <div class="dropdown dropend">
@@ -110,24 +111,23 @@
           
         </div>
 
-        <div class="hidden lg:grid grid-cols-4 col-span-6 items-center mx-4">
-          <NuxtLink to = "/blog" class = "no-underline text-black">
-          <div
-            class="col-span-1 pr-2 md:justify-center font-bold font-sans flex lg:justify-start text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
+        <div class="hidden lg:grid grid-cols-4 col-span-6 items-center mx-4 ">
+          <NuxtLink to = "/blog" class = "no-underline">
+          <div class = "no-underline text-black col-span-1 pr-2 md:justify-center font-bold font-sans flex lg:justify-start text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
           >
             Góc điện ảnh
           </div>
         </NuxtLink>
-        <NuxtLink to = "/event" class = "no-underline text-black">
+        <NuxtLink to = "/event" class = "no-underline text-black col-span-2 pr-2 md:justify-center font-bold  flex lg:justify-center text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105">
           <div
-            class="col-span-2 pr-2 md:justify-center font-bold  flex lg:justify-center text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
+           
           >
             Sự kiện/Khuyến mãi
           </div>
         </NuxtLink>
-        <NuxtLink class = "no-underline text-black">
+        <NuxtLink to="/" class = "no-underline text-black col-span-1 pr-2 md:justify-center font-bold  flex lg:justify-start text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"">
             <div
-            class="col-span-1 pr-2 md:justify-center font-bold  flex lg:justify-start text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
+           
           >
             Rạp
           </div>
@@ -135,23 +135,23 @@
 
           
         </div>
-        <div class="flex lg:col-span-2 col-span-4 items-center justify-center">
-          <div v-if="isLogin" class="flex items-center md:block justify-end">
+        <div class="flex lg:col-span-2 col-span-4 lg:justify-center justify-end items-center">
+          <div v-if="isLogin" class="flex items-center  justify-end">
             <UDropdown
               :items="items"
               mode="hover"
               :popper="{ placement: 'bottom-start' }"
             >
-              <p class="mr-3 mb-1 font-bold ">{{ userName }}</p>
+              <p  class="mr-3 mb-1 font-bold hidden sm:block">{{ userName }}</p>
             </UDropdown>
           </div>
           <div v-else class="flex justify-end items-center">
             <NuxtLink to="/login" class="no-underline text-black"
-              ><span class="hover:bg-[#FF7614] hover:text-white p-2 rounded-lg">Đăng nhập</span></NuxtLink
+              ><span class="hover:bg-[#FF7614] hover:text-white p-2 rounded-lg hidden sm:block">Đăng nhập</span></NuxtLink
             >
           </div>
           <svg
-            class="lg:hidden block mx-2"
+            class="lg:hidden block mx-4"
             @click="isOpen = true"
             width="20"
             height="14"
@@ -202,12 +202,18 @@ const isLogin = computed(() => {
   return Boolean(accessToken.value)
 })
 
+const login = () => {
+  isOpen.value = false
+  router.replace("/")
+}
+
 const handleMenu = item => {
   if (item === 'account') {
     router.replace('/tai-khoan')
   }
   if (item === 'logout') {
     logout()
+    
   }
 }
 
@@ -216,8 +222,8 @@ const changeNameOfCinema = data => {
   //sau khi tên rạp thay đổi thì lập tức gọi api để lấy list phim của rạp đó
   useMovieStore().getAllMovieByCinema(nameOfCinema.value)
 
-  if (route.fullPath != '/login' || route.fullPath != '/signup' || route.fullPath != '/home') {
-    router.replace('/home')
+  if (route.fullPath != '/login' || route.fullPath != '/signup' || route.fullPath != '/') {
+    router.replace('/')
   }
 }
 
@@ -260,9 +266,9 @@ const showAccout = () => {
 .dropend:hover > .dropdown-menu {
   display: block;
 }
-/* .dropend .dropdown-menu li {
+.dropend .dropdown-menu li {
   padding-left: 10px;
-} */
+}
 .dropdown button {
   width: 100%;
   display: flex;
@@ -272,7 +278,7 @@ const showAccout = () => {
   .dropend:hover > .dropdown-menu {
     position: absolute;
     top: 0;
-    left: 100%;
+    left: 161px;
   }
 }
 </style>

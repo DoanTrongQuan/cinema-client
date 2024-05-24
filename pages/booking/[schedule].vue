@@ -680,9 +680,9 @@ import { useProfile } from '~/composables/Profile/useProfile';
 import User from '../management/user.vue';
 
 
-// definePageMeta({
-//   middleware:'booking-middleware', 
-// })
+definePageMeta({
+  middleware:'auth', 
+})
 const route  = useRoute()
 const router  = useRouter()
 const isActive = ref(true)
