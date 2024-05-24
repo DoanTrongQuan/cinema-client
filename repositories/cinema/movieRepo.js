@@ -14,3 +14,8 @@ export const getScheduleByMovie = data => {
   const url = prefix + 'schedule/get-all-schedule-by-movie?slug='
   return Cinema.axiosClient.get(url + data)
 }
+
+export const getAllMovieSuggest = () => {
+  const url = prefix + 'movie/get-all-movie-suggest'
+  return Cinema.axiosClient.get(url)
+}

@@ -15,7 +15,8 @@ export default defineNuxtConfig({
         script: [
             {children: 'var global = window;'}
         ]
-    }
+    },
+
 },
 
   build: {

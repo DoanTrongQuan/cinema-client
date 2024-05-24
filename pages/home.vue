@@ -9,7 +9,7 @@ import {useMovieStore} from '~/stores/user/useMovieStore'
 const movieStore = useMovieStore()
 
 // lấy dữ liệu lên
-movieStore.getAllMovieByCinema()
+onMounted(movieStore.getAllMovieByCinema())
 
 
 const movieUpcoming = computed(() => {

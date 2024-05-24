@@ -1,7 +1,8 @@
 
 import { defineStore } from "pinia";
-import { getAllMovieByCinema, getMovieDetail, getScheduleByMovie } from '~/repositories/cinema/movieRepo';
+import { getAllMovieByCinema, getMovieDetail, getScheduleByMovie, getAllMovieSuggest } from '~/repositories/cinema/movieRepo';
 import { useCinemaStore } from "~/stores/user/useCinemaStore.js";
+import { createToast } from "~/utils/toast";
 
 
 export const useMovieStore = defineStore({
@@ -12,7 +13,8 @@ export const useMovieStore = defineStore({
     movieShowings:[],
     movieDetail:{},
     schedules:[],
-    isShowLoading: false
+    isShowLoading: false,
+    movieSuggest:[]
 
   }),
   getters: {},
@@ -34,9 +36,11 @@ export const useMovieStore = defineStore({
             }
           }
           
+          createToast({message:'Chào mừng bạn đến với spacecinema',time:3000})
           
         } catch (error) {  
-          // alert(error.response.data)
+          createToast({message:'error',type:'error',time:3000})
+          
         }finally {
           this.isShowLoading = false;
         }
@@ -57,6 +61,14 @@ export const useMovieStore = defineStore({
       try {
         const res = await getScheduleByMovie(slug)
         this.schedules = res.data
+      } catch (error) {
+        
+      }
+    },
+    async getAllMovieSuggest() {
+      try {
+        const res = await getAllMovieSuggest()
+        this.movieSuggest = res.data;
       } catch (error) {
         
       }

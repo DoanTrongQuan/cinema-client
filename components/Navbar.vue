@@ -118,16 +118,22 @@
             Góc điện ảnh
           </div>
         </NuxtLink>
+        <NuxtLink to = "/event" class = "no-underline text-black">
           <div
             class="col-span-2 pr-2 md:justify-center font-bold  flex lg:justify-center text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
           >
             Sự kiện/Khuyến mãi
           </div>
-          <div
+        </NuxtLink>
+        <NuxtLink class = "no-underline text-black">
+            <div
             class="col-span-1 pr-2 md:justify-center font-bold  flex lg:justify-start text-lg hover:text-[#FF7614] transition duration-100 ease-in-out transform hover:scale-105"
           >
             Rạp
           </div>
+          </NuxtLink>
+
+          
         </div>
         <div class="flex lg:col-span-2 col-span-4 items-center justify-center">
           <div v-if="isLogin" class="flex items-center md:block justify-end">
@@ -166,6 +172,7 @@
 </template>
   
 <script setup>
+
 import { useCinemaStore } from '@/stores/user/useCinemaStore.js'
 import { useMovieStore } from '@/stores/user/useMovieStore.js'
 

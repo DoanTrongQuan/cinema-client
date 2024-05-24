@@ -1,19 +1,25 @@
 <template>
   <Global>
-  <div class = "lg:max-w-[80%] max-w-[90%] mx-auto">
-    <div class="border-b-2 border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
+  <div class="grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto screen1390:max-w-screen-xl xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 py-7 px-4 lg:px-0">
+    <div class = "xl:col-span-4 ">
+      <div class="border-b-2 border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
         <h1 class="mb-4 text-xl inline-block uppercase font-medium">Blog điện ảnh</h1>
-    </div>
-    <div class = "flex flex-col">
-      <div v-for ="(blog,i) in blogs" :key = "i" class = "flex gap-3 mt-3">
-        <NuxtLink :to="`/blog/${blog.id}`"><div class = "rounded w-[109px] h-[79px] md:w-[255px] md:h-[170px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot; scale-100 blur-0 grayscale-0) snipcss0-2-2-3">
-          <img class = "w-full h-full" :src = "blog.image"></div></NuxtLink>
-        <div class = "flex flex-col">
-          <NuxtLink :to="`/blog/${blog.id}`"><h3 @click = "showBlogDetail(blog.id)">{{ blog.name }}</h3></NuxtLink>
-          <p>{{ blog.description }}</p>
+      </div>
+      <div class = "flex flex-col">
+        <div v-for ="(blog,i) in blogs" :key = "i" class = "flex gap-3 mt-3">
+          <NuxtLink :to="`/blog/${blog.id}`"><div class = "rounded w-[109px] h-[79px] md:w-[255px] md:h-[170px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot; scale-100 blur-0 grayscale-0) snipcss0-2-2-3">
+            <img class = "w-full h-full" :src = "blog.image"></div></NuxtLink>
+          <div class = "flex flex-col">
+            <NuxtLink :to="`/blog/${blog.id}`"><h3 @click = "showBlogDetail(blog.id)">{{ blog.name }}</h3></NuxtLink>
+            <p>{{ blog.description }}</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class = "xl:col-span-2">
+      <ListMovieSuggest/>
+    </div>
+    
   </div>
 </Global>
 </template>
@@ -22,8 +28,10 @@ import { useBlogStore } from '~/stores/user/useBlogStore';
 
 const blogStore = useBlogStore();
 
+
 //lấy tất cả blog
 blogStore.getAllBlog()
+
 
 const blogs = computed(() => {
   return blogStore.blogs;

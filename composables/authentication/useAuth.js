@@ -3,7 +3,7 @@ import { useProfile } from "../Profile/useProfile";
 import { useToken } from "./useToken"
 import { useCinemaStore } from "~/stores/user/useCinemaStore";
 import { useBookingStore } from "~/stores/user/useBookingStore";
-
+import { createToast } from "~/utils/toast";
 
 export const useAuth = () => {
   const { handleSaveCookieAuth, refreshToken } = useToken();
@@ -41,8 +41,10 @@ export const useAuth = () => {
         
         handleSaveCookieAuth(response.data)
         handleSaveCookieProfile(response.data)
+
         return response
       } catch (error) {
+        createToast({message:error.response.data,type:'error',time:3000,title:"Thất bại"})
         throw error;
       }
     },
