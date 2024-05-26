@@ -35,9 +35,6 @@ export const useMovieStore = defineStore({
               this.movieShowings.push(movie)
             }
           }
-          
-          createToast({message:'Chào mừng bạn đến với spacecinema',time:3000})
-          
         } catch (error) {  
           createToast({message:'error',type:'error',time:3000})
           
