@@ -697,12 +697,7 @@ const isShowFood = ref(false)
 const isOpen = ref(false)
 
 
-//mỗi khi khởi tạo sẽ call api lấy dữ liệu mới nhất
-bookingStore.getAllSeat(route.params.schedule);
 
-
-// lây thông tin movie
-bookingStore.getMovie(route.params.schedule)
 
 
 
@@ -821,8 +816,17 @@ const intervalColor = ref(null)
 
 onMounted(() => {
 
+    
+
     //tao bill
     bookingStore.createBill()
+
+        //mỗi khi khởi tạo sẽ call api lấy dữ liệu mới nhất
+    bookingStore.getAllSeat(route.params.schedule);
+
+
+    // lây thông tin movie
+    bookingStore.getMovie(route.params.schedule)
 
     intervalTime.value  =  setInterval(() => {
         if(time.value > 0){

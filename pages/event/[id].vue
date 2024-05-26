@@ -4,7 +4,7 @@
       <div class = "xl:col-span-4">
         <p><span>Trang chủ </span> / <span>Sự kiện</span> / <span>{{ eventDetail.name }}</span></p>
         <h1>{{ eventDetail.name }}</h1>
-        <div v-html="eventDetail.description">
+        <div v-html="cleanHTML">
         </div>
       </div>
       <div class="xl:col-span-2">
@@ -15,7 +15,7 @@
   </template>
   <script setup>
 import { usePromotionStore } from '~/stores/user/usePromotionStore'
-  // import DOMPurify from 'dompurify';
+  import DOMPurify from 'dompurify';
   
   
   const promotionStore = usePromotionStore()
@@ -32,9 +32,7 @@ import { usePromotionStore } from '~/stores/user/usePromotionStore'
     return promotionStore.eventDetail;
   })
   
-  // const cleanHTML = computed(() => {
-  //   return DOMPurify.sanitize(blogDetail.value.content)
-  // })
+  const cleanHTML = computed(() => DOMPurify.sanitize(eventDetail.value.description || ''));
   
   
   

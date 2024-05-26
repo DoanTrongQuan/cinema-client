@@ -71,7 +71,7 @@ const banner = ref([{ linkImage: '/img/image-caroseol.jpg' }, { linkImage: '/img
             </div>
         <div  class="main" >
             <div class="wrap-header">
-                <v-carousel cycle style="height: auto" hide-delimiter-background show-arrows="hover" :interval="6000000">
+                <v-carousel cycle style="height: auto" hide-delimiter-background show-arrows="hover" :interval="6000">
                     <v-carousel-item v-for="(ban, i) in banner" :key="i">
                         <v-sheet height="100%">
                             <div class="d-flex fill-height justify-center align-center">

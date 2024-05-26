@@ -54,7 +54,7 @@ export const useBookingStore = defineStore({
         this.totalMoney = res.data.totalMoney;
         this.seatSelected = res.data.seatSelected;
       } catch (error) {
-        alert(error.response.data);
+
       }
     },
     updateLocalSeat(newValue){
@@ -77,7 +77,7 @@ export const useBookingStore = defineStore({
         const res = await getTotalMoney(user);
         this.totalMoney = res.data;
       } catch (error) {
-        alert(error.response.data)
+
       }
     },
     async resetSeatStatus(scheduleId){
@@ -97,7 +97,7 @@ export const useBookingStore = defineStore({
         this.seatNormal = {},
         this.seatVip = {}
       } catch (error) {
-        alert(error.response.data)
+
       }
     },
     async createBill () {
@@ -105,7 +105,7 @@ export const useBookingStore = defineStore({
         const res = await createBill();
         
       } catch (error) {
-        alert(error.response.data)
+
       }
     },
     async getMovie(schedule) {
@@ -116,7 +116,7 @@ export const useBookingStore = defineStore({
         this.movie = res.data;
       
       } catch (error) {
-        alert(error.response.data)
+
       }finally{
         useMovieStore().isShowLoading = false;
       }
@@ -127,7 +127,7 @@ export const useBookingStore = defineStore({
         this.foods = res.data
     
       } catch (error) {
-        alert(error.response.data)
+
       }
     },
     async getAllPromotionByUser () {
@@ -135,7 +135,7 @@ export const useBookingStore = defineStore({
         const res = await getAllPromotionByUser();
         this.promotions = res.data;
       } catch (error) {
-        alert(error.response.data)
+
       }
     },
 
@@ -146,7 +146,8 @@ export const useBookingStore = defineStore({
         this.discountAmount = res.data.discountAmount;
         this.finalAmount = res.data.finalAmount;
       } catch (error) {
-        alert(error.response.data)
+
+
       }
     },
     
@@ -157,7 +158,7 @@ export const useBookingStore = defineStore({
         this.discountAmount = res.data.discountAmount;
         this.totalMoney = res.data.totalMoney;
       } catch (error) {
-        alert(error.response.data)
+        createToast({message:error.response.data,type:'error',time:3000, title:"Không thể xác định voucher!Vui lòng thử lại"})
       }
     },
 
@@ -167,7 +168,7 @@ export const useBookingStore = defineStore({
         this.paymentLink = res.data
         window.location.href = res.data;
       } catch (error) {
-        alert(error.response.data.message);
+        createToast({message:error.response.data.message,type:'error',time:3000, title:"Vui lòng thử lại"})
       }
     },
     async getPoint () {

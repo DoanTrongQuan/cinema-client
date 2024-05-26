@@ -18,8 +18,11 @@ import DOMPurify from 'dompurify';;
 const blogStore = useBlogStore();
 const route = useRoute();
 
-// Lấy dữ liệu blog theo id
+onMounted(() => {
+  // Lấy dữ liệu blog theo id
 blogStore.getBlogDetail(route.params.id);
+})
+
 
 const blogDetail = computed(() => blogStore.blogDetail);
 

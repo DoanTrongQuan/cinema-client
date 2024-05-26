@@ -74,10 +74,14 @@ import {useMovieStore} from '~/stores/user/useMovieStore'
 //     layout:true
 // })
 
+onMounted(() => {
+    // lấy dữ liệu lên
+movieStore.getAllMovieByCinema()
+})
+
 const movieStore = useMovieStore()
 
-// lấy dữ liệu lên
-movieStore.getAllMovieByCinema()
+
 
 
 const movieUpcoming = computed(() => {

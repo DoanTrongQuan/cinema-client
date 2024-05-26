@@ -478,8 +478,11 @@ const schedules = computed(() => {
   return useMovieStore().schedules;
 })
 
-useMovieStore().getScheduleByMovie(useRoute().params.slug)
-useMovieStore().getMovieDetail(useRoute().params.slug)
+onMounted(() => {
+  useMovieStore().getScheduleByMovie(useRoute().params.slug)
+  useMovieStore().getMovieDetail(useRoute().params.slug)
+})
+
 
 const showTrailler = () => {
   console.log(123)
