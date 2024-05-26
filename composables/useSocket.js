@@ -11,6 +11,10 @@ export const useSocket = () => {
   const content = ref('')
 
   const connect = (url,sub,res) => { 
+
+    if (url.startsWith('http://')) {
+      url = url.replace('http://', 'https://');
+    }
     const socket = new SockJS(url);
     
       stompClient.value = Stomp.over(socket);
