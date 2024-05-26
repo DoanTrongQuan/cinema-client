@@ -54,7 +54,7 @@ export const getPoint = () => {
   return Cinema.axiosAuth.get(url)
 }
 export const submitOrder = (amount,user,schedule) => {
-  const url = `http://localhost:8089/submitOrder?amount=${amount}&user=${user}&schedule=${schedule}`;
+  const url = `https://localhost:8089/submitOrder?amount=${amount}&user=${user}&schedule=${schedule}`;
   return Cinema.axiosAuth.post(url)
 }
 
