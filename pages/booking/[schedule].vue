@@ -45,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-center w-full">
+        <div class="flex justify-center w-full ">
             <button @click = "confirmPayment" class = "rounded-md bg-orange-500 p-1 text-white">
                 XÁC NHẬN
             </button>
@@ -275,7 +275,7 @@
             </div>              
           </div>
           <div class="seat-type-panel py-4" style="padding-top: 15px;width: 99%;border-radius: 10px;">
-            <div class="row" style="padding-left: 40px;">
+            <div class="row pl-6">
                 <div class="col-lg-3 col-12" style="padding-top: 0;padding-bottom: 8px;">
                     <div class="row seat-type">
                         <div class="col-lg-3 col-4" style="padding: 0 !important;display: flex;align-items: center;">
@@ -283,7 +283,7 @@
                         </div>
                         <span class="col-lg-8 col-4" style="font-size: 18px;margin-left: 8px;font-weight: bold;">Ghế thường</span>
                         
-                        <span v-if = "seatNormal.seatSelectedCount != 0" class="col-12 value-money" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatNormal.seatSelectedCount }} x {{ seatNormal.price }} vnđ</span>
+                        <span v-if = "seatNormal.seatSelectedCount != 0" class="col-12 value-money pl-0" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatNormal.seatSelectedCount }} x {{ seatNormal.price }} vnđ</span>
                     </div>
                 </div>
                 <div class="col-lg-2 col-12" style="padding-top: 0;padding-bottom: 0;">
@@ -292,23 +292,23 @@
                             <img  style="width: 40px;height: 40px" src="/img/seat-unselect-vip.png" alt="">
                         </div>
                         <span class="col-lg-8 col-4" style="font-size: 18px;margin-left: 8px;font-weight: bold">Ghế VIP</span>
-                        <span v-show ="seatVip.seatSelectedCount != 0" class="co-12 value-money" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatVip.seatSelectedCount }} x {{ seatVip.price }} vnđ</span>
+                        <span v-show ="seatVip.seatSelectedCount != 0" class="co-12 value-money pl-0" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatVip.seatSelectedCount }} x {{ seatVip.price }} vnđ</span>
                     </div>
                 </div>
-                <div class="col-lg-2 col-12" style="border-right: 2px solid #d8d8d8;padding-top: 0;padding-bottom: 8px;">
+                <div class="col-lg-2 col-12 lg:border-r-[2px]" style="padding-top: 0;padding-bottom: 8px;">
                     <div class="row seat-type">
                         <div class="col-lg-3 col-4" style="padding: 0 !important;display: flex;align-items: center;">
                             <img class="image-seat-double" style="width: 40px;height: 20px" src="/img/seat-unselect-double.png" alt="">
                         </div>
                         <span class="col-lg-8 col-4" style="font-size: 18px;margin-left: 8px;font-weight: bold">Ghế đôi</span>
-                        <span v-show ="seatDouble.seatSelectedCount != 0" class="col-12 value-money" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatDouble.seatSelectedCount }} x {{ seatDouble.price }} vnđ</span>
+                        <span v-show ="seatDouble.seatSelectedCount != 0" class="col-12 value-money pl-0" style="padding-top:10px ;padding-bottom: 0;text-align: center;">{{ seatDouble.seatSelectedCount }} x {{ seatDouble.price }} vnđ</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-12 money" style="border-right: 2px solid #d8d8d8;padding-top: 0;padding-bottom: 8px;">
+                <div class="col-lg-3 col-12 money lg:border-r-[2px]" style="padding-top: 0;padding-bottom: 8px;">
                     <div class="flex flex-col" style="margin-top: 10px;">
                         <p class="" style="margin-bottom: 8px;font-size: 18px;margin-left: 8px;font-weight: bold;float: left;padding-left:0 ;padding-top: 5px;">Tổng tiền</p>
                         <p></p>
-                        <p v-show ="totalMoney != 0" class="col-lg-12 col-4 result-money text-[#03599d] mb-0" style="padding-top:0;padding-bottom: 0;text-align: center;">{{ totalMoney }} vnđ</p>
+                        <p v-show ="totalMoney != 0" class="col-12result-money text-[#03599d] mb-0 text-end w-full px-3" style="padding-top:0;padding-bottom: 0;text-align: center;">{{ totalMoney }} vnđ</p>
 
                     </div>
                 </div>
@@ -337,17 +337,17 @@
                                 <div class="col-4" style="font-size: 16px;">
                                     <span><b>Họ tên:</b></span>
                                     <br>
-                                    <span> Đoàn trọng quân </span>
+                                    <span> {{userName}} </span>
                                 </div>
                                 <div class="col-4" style="font-size: 16px;">
                                     <span><b>Số điện thoại:</b></span>
                                     <br>
-                                    <span>0373554038</span>
+                                    <span>{{ phoneNumber }}</span>
                                 </div>
                                 <div class="col-4" style="font-size: 16px;">
                                     <span><b>Email:</b></span>
                                     <br>
-                                    <span>trongquan202@gmail.com</span>
+                                    <span>{{ email }}</span>
                                 </div>  
                             </div>
                             <div  style="height: 35px;display: flex;margin-top: 20px;">
@@ -463,15 +463,19 @@
                                 <div class="voucher" style="margin-top: 60px;">
                                     <v-card flat> 
                                     <v-data-table
-                                    style="font-weight: 600;font-size: 18px;"
-                                    :headers="headersPromotion"
-                                    :items="promotions"
-                                    :search="search2" >
-                                    <template #bottom></template>
-                                </v-data-table>
+                                        style="font-weight: 600;font-size: 18px;"
+                                        :headers="headersPromotion"
+                                        :items="promotions"
+                                        :search="search2" >
+                                        <template #bottom></template>
+                                    </v-data-table>
                                 </v-card> 
                                 </div>
                             </div>
+                            <div>
+                              <Point/>  
+                            </div>
+
                             <div style="text-align: right;margin-top: 20px;font-size: 18px;">
                                 <span style="margin-bottom: 10px"><b>Tổng tiền: </b>{{ totalMoney }} vnđ</span>
                                 <br>
@@ -687,9 +691,19 @@ const route  = useRoute()
 const router  = useRouter()
 const isActive = ref(true)
 const bookingStore = useBookingStore()
-const { userID } = useProfile()
+const { userID,userName,phoneNumber,email } = useProfile()
+
 const isShowFood = ref(false)
 const isOpen = ref(false)
+
+
+//mỗi khi khởi tạo sẽ call api lấy dữ liệu mới nhất
+bookingStore.getAllSeat(route.params.schedule);
+
+
+// lây thông tin movie
+bookingStore.getMovie(route.params.schedule)
+
 
 
 const {
@@ -744,7 +758,7 @@ const promotions = computed(() => {
 });
 
 const finalAmount = computed(() => {
-    return bookingStore.finalAmount;
+    return bookingStore.finalAmount === 0 ? bookingStore.totalMoney : bookingStore.finalAmount;
 })
 const discountAmount = computed(() => {
     return bookingStore.discountAmount;
@@ -753,12 +767,8 @@ const discountAmount = computed(() => {
 const isSeatSelectedVip = Boolean(seatVip.value)
 const isSeatSelectedNormal = Boolean(seatNormal.value)
 const isSeatSelectedDouble = Boolean(seatDouble.value)
-//mỗi khi khởi tạo sẽ call api lấy dữ liệu mới nhất
-bookingStore.getAllSeat(route.params.schedule);
 
 
-// lây thông tin movie
-bookingStore.getMovie(route.params.schedule)
 
 
 const currentColorIndex = ref(0);
@@ -772,6 +782,12 @@ const headersFood = ref([
           { title: 'Giá (VNĐ)', key: 'price',align: 'center', },
           { title: 'Số lượng', key: 'action',align: 'center', }  
       ])
+
+const headersPromotion = ref([
+          { title: 'Mã Voucher', key: 'name', align: 'center', },
+          { title: 'Nội Dung Voucher', align: 'center',key: 'description',sortable: false,class: 'bold-title',},  
+          { title: 'Ngày hết hạn', key: 'endTime',align: 'center', }, 
+])
 
 
 const time = ref(1000)
@@ -953,6 +969,10 @@ const  confirmPayment = () => {
     bookingStore.submitOrder(amount, user,schedule)
 }
 
+const isShowPoint = ref(false);
+const showPoint = () => {
+    isShowPoint.value = !isShowPoint.value
+}
 
 </script>
 
@@ -1099,4 +1119,15 @@ const  confirmPayment = () => {
 .content-schedule:hover {
     transform: translateY(-1px);
 }
+
+.content-schedule {
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    position: -webkit-sticky; /* Đối với Safari */
+    position: sticky;
+    top: 0;
+}
+
+
 </style>

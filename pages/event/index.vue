@@ -1,66 +1,19 @@
 <template>
-          <div class="border-b-2 max-w-[83.5%] mx-auto border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
+          <div class="border-b-2 max-w-[85%] mx-auto border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
           <h1 class="mb-0 text-xl inline-block uppercase font-medium">Ưu đãi</h1>
         </div>
-  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto screen1390:max-w-screen-xl xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 pb-7 px-4 lg:px-0">
+  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto xl:max-w-[85%] xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 pb-7 px-4 lg:px-0">
     
-      <div class="py-4 flex xl:col-span-4 md:gap-[20px] justify-between md:justify-start flex-wrap snipcss-OAzJO">
-        <a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/cine-voi-ca-cung---tu-tap-vui-coa-choi/"><img alt="Cine Với Cạ Cứng - Tụ Tập Vui &quot;Cóa Chời&quot;" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-F6g1j" src="https://cdn.galaxycine.vn/media/2024/5/24/500_1716521540457.jpg" id="style-F6g1j">
-        <div class="promotion__decription">
-            <p>Cine Với Cạ Cứng - Tụ Tập Vui "Cóa Chời"</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/xem-phim-hay--ngat-ngay-cung-banh-phong-de-rec-rec/"><img alt="Xem Phim Hay – Ngất Ngây Cùng Bánh Phồng Dế Rec Rec" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-IUcAa" src="https://cdn.galaxycine.vn/media/2024/4/2/500_1712051408911.jpg" id="style-IUcAa">
-        <div class="promotion__decription">
-            <p>Xem Phim Hay – Ngất Ngây Cùng Bánh Phồng Dế Rec Rec</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/zalopay-tang-25k-khi-dat-ve-galaxy/"><img alt="ZaloPay Giảm Đến 50K Khi Mua Vé Galaxy Cinema" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-SBjqE" src="https://cdn.galaxycine.vn/media/2024/4/15/galaxy-da-co-1200x1800_1713168770593.jpg" id="style-SBjqE">
-        <div class="promotion__decription">
-            <p>ZaloPay Giảm Đến 50K Khi Mua Vé Galaxy Cinema</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/voucher-giam-50k-danh-tang-cac-stars/"><img alt="Voucher ShopeePay Giảm 20K Dành Tặng Các Stars!" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-LrsRX" src="https://cdn.galaxycine.vn/media/2024/4/26/shopee-1_1714143332094.jpg" id="style-LrsRX">
-        <div class="promotion__decription">
-            <p>Voucher ShopeePay Giảm 20K Dành Tặng Các Stars!</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/happy-day/"><img alt="Happy Day - Vé Chỉ Từ 50K" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-BFnwO" src="https://cdn.galaxycine.vn/media/2024/4/16/500_1713257519345.jpg" id="style-BFnwO">
-        <div class="promotion__decription">
-            <p>Happy Day - Vé Chỉ Từ 50K</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/mua-qua-tang-cho-thanh-vien-galaxy-cinema-2024/"><img alt="Mưa Quà Tặng Cho Thành Viên Galaxy Cinema 2024" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-RlG2j" src="https://cdn.galaxycine.vn/media/2024/1/19/1200x1800_1705628936074.jpg" id="style-RlG2j">
-        <div class="promotion__decription">
-            <p>Mưa Quà Tặng Cho Thành Viên Galaxy Cinema 2024</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/u22-vui-ve---bap-nuoc-sieu-hat-de/"><img alt="U22 Vui Vẻ - Bắp Nước Siêu Hạt Dẻ" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-hcDdo" src="https://cdn.galaxycine.vn/media/2022/12/10/combo-u22-digital-300x450-1667285239633_1670637604853.jpg" id="style-hcDdo">
-        <div class="promotion__decription">
-            <p>U22 Vui Vẻ - Bắp Nước Siêu Hạt Dẻ</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/ngay-tri-an-cua-galaxy-cinema---ngay-thu-hai-dau-tien-moi-thang/"><img alt="Ngày Tri Ân Của Galaxy Cinema - Ngày Thứ Hai ĐẦU TIÊN Mỗi Tháng" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-9OTEV" src="https://cdn.galaxycine.vn/media/2024/4/26/500_1714100172735.jpg" id="style-9OTEV">
-        <div class="promotion__decription">
-            <p>Ngày Tri Ân Của Galaxy Cinema - Ngày Thứ Hai ĐẦU TIÊN Mỗi Tháng</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/gia-ve-u22---dong-gia-45k/"><img alt="Giá Vé U22  - Chỉ Từ 45k" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-gA16C" src="https://cdn.galaxycine.vn/media/2023/11/23/giaveu22-digital-1200x1800_1700731541347.jpg" id="style-gA16C">
-        <div class="promotion__decription">
-            <p>Giá Vé U22 - Chỉ Từ 45k</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/galaxy-studio-va-samsung-ky-ket-hop-tac-chien-luoc-tai-dinh-nghia-su-ket-hop-giua-dien-anh--cong-nghe/"><img alt="Galaxy Studio Và Samsung Ký Kết Hợp Tác Chiến Lược, Tái Định Nghĩa Sự Kết Hợp Giữa Điện Ảnh – Công Nghệ" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-s8Frd" src="https://cdn.galaxycine.vn/media/2024/3/21/galaxy-studio-va-samsung-k-ket-hop-tac-chien-luoc--tai-dinh-nghia-su-ket-hop-giua-dien-anh--cong-nghe-8_1711006006561.jpg" id="style-s8Frd">
-        <div class="promotion__decription">
-            <p>Galaxy Studio Và Samsung Ký Kết Hợp Tác Chiến Lược, Tái Định Nghĩa Sự Kết Hợp Giữa Điện Ảnh – Công Nghệ</p>
-        </div>
-    </a><a class="promotion__item mb-6 md:mr-0 cursor-pointer relative" href="/khuyen-mai/tie-chi-phan-loai-phim-theo-lua-tuoi-cap-nhat-moi-tu-cuc-dien-anh/"><img alt="Tiêu Chí Phân Loại Phim Theo Lứa Tuổi" loading="lazy" width="255" height="380" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-F2cJq" src="https://cdn.galaxycine.vn/media/2023/7/25/quy-dinh-do-tuoi-digital-1200x1800-1684835366729_1690277000962.jpg" id="style-F2cJq">
-        <div class="promotion__decription">
-            <p>Tiêu Chí Phân Loại Phim Theo Lứa Tuổi</p>
-        </div>
-    </a></div>
+      <div class="py-4 grid xl:col-span-4 grid-cols-3 md:gap-[20px] justify-between md:justify-start flex-wrap snipcss-OAzJO">
+        <div v-for = "(event,i) in events" :key = "i" class="col-span-1 promotion__item mb-6 md:mr-0 cursor-pointer relative">
+          <NuxtLink :to="`/event/${event.id}`">
+          <img alt="Cine Với Cạ Cứng - Tụ Tập Vui &quot;Cóa Chời&quot;" loading="lazy" width="200" height="320" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
+      scale-100 blur-0 grayscale-0) style-F6g1j" :src="event.image">
+          <div class="promotion__decription">
+              <p>{{ event.name }}</p>
+          </div></NuxtLink>
+      </div>
+      </div>
     <div class = "xl:col-span-2">
       <ListMovieSuggest/>
     </div>
@@ -73,11 +26,11 @@ import { usePromotionStore } from '~/stores/user/usePromotionStore'
 
 const promotionStore = usePromotionStore()
 
-promotionStore.getAllPromotion()
+
 
 onMounted(
   () => {
-    // lấy dữ liệu
+   promotionStore.getAllPromotion()
     
   }
 )

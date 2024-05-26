@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 import { getAllSeat, updateSeatStatus, 
   createBill, resetSeatStatus,getMovie,
   getAllFood,getAllPromotionByUser,chooseFood,getDiscountAmount,submitOrder, 
-  getTotalMoney } from '~/repositories/cinema/bookingRepo';
+  getTotalMoney, getPoint } from '~/repositories/cinema/bookingRepo';
 import { useCinemaStore } from "@/stores/user/useCinemaStore.js";
 import { useMovieStore } from "./useMovieStore";
 
@@ -21,6 +21,7 @@ export const useBookingStore = defineStore({
     promotions:[],
     finalAmount:0,
     discountAmount:0,
+    point:0,
     paymentLink:'',
     
 
@@ -167,6 +168,14 @@ export const useBookingStore = defineStore({
         window.location.href = res.data;
       } catch (error) {
         alert(error.response.data.message);
+      }
+    },
+    async getPoint () {
+      try {
+        const res = await getPoint();
+        this.point = res.data
+      } catch (error) {
+        
       }
     },
 

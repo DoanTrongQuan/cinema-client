@@ -48,6 +48,11 @@ export const getTotalMoney = user => {
   const url = prefix + 'bill/get-totalMoney?user='
   return Cinema.axiosAuth.get(url + user)
 }
+
+export const getPoint = () => {
+  const url = prefix + 'user/get-point'
+  return Cinema.axiosAuth.get(url)
+}
 export const submitOrder = (amount,user,schedule) => {
   const url = `http://localhost:8089/submitOrder?amount=${amount}&user=${user}&schedule=${schedule}`;
   return Cinema.axiosAuth.post(url)

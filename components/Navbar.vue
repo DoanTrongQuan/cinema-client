@@ -129,7 +129,7 @@
             <div
            
           >
-            Rạp
+            Phim
           </div>
           </NuxtLink>
 

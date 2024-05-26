@@ -1,6 +1,5 @@
 import { useAuth } from '~/composables/authentication/useAuth';
 import * as Yup from 'yup';
-
 export const useSignup = () => {
   // const toast = useToast();
   // const router = useRouter();
@@ -16,6 +15,7 @@ export const useSignup = () => {
     phoneNumber: '',
     confirmCode: '',
   });
+  const isLoading = ref(false)
 
   const emailRegistered = reactive(false)
   
@@ -59,7 +59,7 @@ export const useSignup = () => {
   });
 
   async function onSubmit() {
-    console.log(fadsfds)
+    isLoading.value = true
     try {
 
       const data = {
@@ -73,19 +73,27 @@ export const useSignup = () => {
       }
 
       const response = await authAsync.signUp(data)
+      isLoading.value = false
       alert(response.data)
     } catch (error) {
+      isLoading.value = false
       alert(error.response.data)
+    }finally{
+      isLoading.value = false;
     }
   }
 
   async function sendCodeClick(e) {
+    isLoading.value = true
     try {
       e.preventDefault();
       const res = await authAsync.sendCodeToEmail(userRegister.email);
+      isLoading.value = false
       alert(res.data)
     } catch (error) {
       alert(error.response.data)
+    }finally{
+      isLoading.value = false
     }
   }
 
@@ -95,7 +103,8 @@ export const useSignup = () => {
     isDisableGetCode,
     isDisableEmailCode,
     onSubmit,
-    sendCodeClick
+    sendCodeClick,
+    isLoading
   }
 
 }

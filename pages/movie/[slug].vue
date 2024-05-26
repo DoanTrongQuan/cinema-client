@@ -397,8 +397,18 @@
               </div>
             </div>
           </div>
-          <div class="movie__gallery"></div>
-          <div class = "movie__showtime">
+          <div class="movie__gallery lg:-translate-y-14">
+            <div class="movie__content mt-3 lg:mt-0 snipcss-clTWL"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
+                <h1 class="text-base inline-block capitalize font-bold mb-3">Nội dung phim</h1>
+                <div class="block__wysiwyg text-black-10 text-sm font-normal not-italic content-text content__data__full">
+                  <p>
+                    {{ movieDetail.description }}
+                  </p>
+                    
+                </div>
+            </div>
+          </div>
+          <div class = "movie__showtime lg:-translate-y-16 mt-2">
             <div class = "movie__showtime-header">
               <span class ="border-l-4 border-solid border-blue-10 mr-2"></span>
               <h1 class = "mb-4 text-base inline-block capitalize font-bold">Lịch chiếu</h1>
@@ -437,6 +447,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="lg:col-span-3">
+        <ListMovieSuggest/>
       </div>
     </div>
 

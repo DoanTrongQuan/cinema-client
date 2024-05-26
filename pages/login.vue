@@ -52,8 +52,8 @@
             </button>
           </div>
           <div class="text-center">
-            Have an acccount?
-            <NuxtLink to="/signup" class="no-underline text-black"><span class="cursor-pointer">Sign in</span></NuxtLink>
+            Don't Have an acccount?
+            <NuxtLink to="/signup" class="no-underline text-black"><span class="cursor-pointer">Sign up</span></NuxtLink>
           </div>
         </UForm>
       </UCard>

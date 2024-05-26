@@ -1,5 +1,5 @@
 <template>
-  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto screen1390:max-w-screen-xl xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 py-7 px-4 lg:px-0">
+  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto xl:max-w-[90%] xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-4 py-7 px-4 lg:px-0">
     <div class = "xl:col-span-4">
       <p><span>Trang chủ </span> / <span>Blog</span> / <span>{{ blogDetail.name }}</span></p>
       <h1>{{ blogDetail.name }}</h1>

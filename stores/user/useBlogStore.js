@@ -26,8 +26,9 @@ export const useBlogStore = defineStore({
         }
     },
     async getBlogDetail(data){
+      useMovieStore().isShowLoading = true;
       try {
-        useMovieStore().isShowLoading = true;
+        
         const res = await getBlogDetail(data)
         this.blogDetail = res.data;
       } catch (error) {  

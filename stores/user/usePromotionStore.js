@@ -2,14 +2,15 @@
 import { defineStore } from "pinia";
 
 import { createToast } from "~/utils/toast";
-import { getAllPromotion } from "~/repositories/cinema/promotionRepo";
+import { getAllPromotion,getPromotionDetail } from "~/repositories/cinema/promotionRepo";
 import { useMovieStore } from "./useMovieStore";
 
 export const usePromotionStore = defineStore({
   id: "promotionStore",
   state: () => ({
     isShowLoading: false,
-    events:[]
+    events:[],
+    eventDetail:{}
 
   }),
   getters: {},
@@ -21,6 +22,16 @@ export const usePromotionStore = defineStore({
         this.events = res.data
       } catch (error) {
         
+      }finally {
+        useMovieStore().isShowLoading = false;
+      }
+    },
+    async getPromotionDetail(id) {
+      useMovieStore().isShowLoading = true;
+      try {
+        const res = await getPromotionDetail(id)
+        this.eventDetail = res.data
+      } catch (error) {
       }finally {
         useMovieStore().isShowLoading = false;
       }
