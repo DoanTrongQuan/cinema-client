@@ -8,8 +8,11 @@ import {useMovieStore} from '~/stores/user/useMovieStore'
 
 const movieStore = useMovieStore()
 
-// lấy dữ liệu lên
+
+
 movieStore.getAllMovieByCinema()
+
+
 
 
 const movieUpcoming = computed(() => {

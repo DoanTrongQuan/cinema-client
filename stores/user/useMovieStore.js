@@ -36,7 +36,6 @@ export const useMovieStore = defineStore({
             }
           }
         } catch (error) {  
-          createToast({message:'error',type:'error',time:3000})
           
         }finally {
           this.isShowLoading = false;

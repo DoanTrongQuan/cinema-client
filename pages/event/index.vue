@@ -2,17 +2,16 @@
           <div class="border-b-2 max-w-[85%] mx-auto border-blue-10 snipcss-bNwPy"><span class="border-l-4 border-solid border-blue-10 mr-2"></span>
           <h1 class="mb-0 text-xl inline-block uppercase font-medium">Ưu đãi</h1>
         </div>
-  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto xl:max-w-[85%] xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-8 pb-7 px-4 lg:px-0">
+  <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto xl:max-w-[85%] xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-6 pb-7 px-4">
     
-      <div class="py-4 grid xl:col-span-4 grid-cols-3 md:gap-[20px] justify-between md:justify-start flex-wrap snipcss-OAzJO">
-        <div v-for = "(event,i) in events" :key = "i" class="col-span-1 promotion__item mb-6 md:mr-0 cursor-pointer relative">
+      <div class="py-4 flex lg:col-span-4 md:gap-[20px] justify-between md:justify-start">
+        <div v-for = "(event,i) in events" :key = "i" class="mb-6 md:mr-0 cursor-pointer relative">
           <NuxtLink :to="`/event/${event.id}`">
-          <img alt="Cine Với Cạ Cứng - Tụ Tập Vui &quot;Cóa Chời&quot;" loading="lazy" width="200" height="320" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot;
-      scale-100 blur-0 grayscale-0) style-F6g1j" :src="event.image">
-          <div class="promotion__decription">
-              <p>{{ event.name }}</p>
-          </div></NuxtLink>
-      </div>
+            <div class="relative group">
+              <img alt="Cine Với Cạ Cứng - Tụ Tập Vui" loading="lazy" width="200" height="320" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100 scale-100 blur-0 grayscale-0 style-F6g1j" :src="event.image">
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     <div class = "xl:col-span-2">
       <ListMovieSuggest/>
@@ -341,7 +340,7 @@ img {
     bottom: 0; 
     right: 0; 
     width: 100%; 
-    height: 100%; 
+    
     background: #00000080; 
     transition: all .3s ease-in-out; 
     opacity: 0; 
@@ -544,6 +543,20 @@ h1 {
     text-transform: uppercase;
 } 
 
+.group:hover img {
+    transform: translateY(-2px) scale(1.02); /* Hiệu ứng nhảy nhẹ và phóng to */
+  }
 
+  .group:hover .absolute {
+    opacity: 1; /* Hiển thị chữ "hello" */
+  }
+
+  img {
+    transition: transform 0.1s ease, filter 0.1s ease; /* Thêm hiệu ứng chuyển tiếp */
+  }
+
+  .absolute {
+    transition: opacity 0.1s ease; /* Thêm hiệu ứng chuyển tiếp cho chữ "hello" */
+  }
 
 </style>

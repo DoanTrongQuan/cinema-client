@@ -3,7 +3,7 @@
     <div class="xl:col-span-4">
       <p><span>Trang chủ </span> / <span>Blog</span> / <span>{{ blogDetail.name }}</span></p>
       <h1>{{ blogDetail.name }}</h1>
-      <div v-html="cleanHTML"></div>
+      <div v-html="blogDetail.content"></div>
     </div>
     <div class="xl:col-span-2">
       <ListMovieSuggest/>
