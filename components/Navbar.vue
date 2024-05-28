@@ -40,9 +40,9 @@
           <div class="flex flex-col cursor-pointer">
             <div @click="showAccout" v-if = "isLogin" class="my-2 font-normal hover:text-[#FF7614]">Thông tin cá nhân</div>
             <NuxtLink to = "/blog"><div class="my-2 font-normal hover:text-[#FF7614]">Góc điện ảnh</div></NuxtLink>
-            <div class="my-2 font-normal hover:text-[#FF7614]">Sự kiện/Khuyến mãi</div>
-            <div class="my-2 font-normal hover:text-[#FF7614]">Rạp</div>
-            <div v-if="isLogin"  class="my-2 font-normal hover:text-[#FF7614]">Đăng xuất</div>
+            <NuxtLink to = "/event"><div class="my-2 font-normal hover:text-[#FF7614]">Sự kiện/Khuyến mãi</div></NuxtLink>
+            <NuxtLink to = "/"><div class="my-2 font-normal hover:text-[#FF7614]">Phim</div></NuxtLink>
+            <div v-if="isLogin" @click = "logout"  class="my-2 font-normal hover:text-[#FF7614]">Đăng xuất</div>
             <div v-else @click = "login">Đăng nhập</div>
           </div>
         </div>

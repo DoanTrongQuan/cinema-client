@@ -35,22 +35,6 @@
           >
             ĐĂNG NHẬP
           </button>
-
-          <div
-            class="row"
-            style="
-              background-image: linear-gradient(to right, #fc3606 0%, #fda085 51%, #fc7704 100%) !important;
-              width: 100%;
-              height: 45px;
-              border-radius: 20px;
-              margin-left: 0.2px;
-              margin-top: 10px;
-            "
-          >
-            <button style="color: white; font-size: 14px; line-height: 50px; font-weight: bold">
-              ĐĂNG NHẬP VỚI FACEBOOK
-            </button>
-          </div>
           <div class="text-center">
             Don't Have an acccount?
             <NuxtLink to="/signup" class="no-underline text-black"><span class="cursor-pointer">Sign up</span></NuxtLink>

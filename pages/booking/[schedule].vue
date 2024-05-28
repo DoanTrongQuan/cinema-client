@@ -170,20 +170,20 @@
                               </div>
                             </div>
                         </div>
-                        <div class="full-width" style="">
-                            <div class="seat-normal" v-for="(seat, i) in seats.slice(72, 90)" :key="i" @click="bookingSeat(seat)" style="cursor: pointer;">
-                              <div v-if ="seat.seatStatus === 4" style="text-align: center; background-image: url('/img/seat-buy-normal.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;">
-                                <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
-                              </div>
-                              <div v-else-if="seat.seatStatus === 3 && seat.userId === userID" style="text-align: center; background-image: url('/img/seat-select-normal.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;">
-                                <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
-                              </div>
-                              <div v-else-if="seat.seatStatus === 3" style="text-align: center; background-image: url('/img/seat-process-normal.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;">
-                                <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
-                              </div>
-                              <div v-else-if="seat.seatStatus === 1 && seat.seatType == 1" class="seat" style="text-align: center; background-image: url('/img/seat-unselect-normal.png');">
-                                <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
-                              </div>
+                        <div class="full-width">
+                            <div class="seat-vip" v-for="(seat, i) in seats.slice(72, 90)" :key="i"  @click="bookingSeat(seat)" style="cursor: pointer;">                
+                                <div v-if ="seat.seatStatus == 3 && seat.userId === userID" style="text-align: center; background-image: url('/img/seat-select-vip.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;" >
+                                    <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
+                                </div>
+                                <div v-else-if ="seat.seatStatus == 4" style="text-align: center; background-image: url('/img/seat-buy-vip.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;">
+                                    <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
+                                </div>
+                                <div v-else-if="seat.seatStatus === 3" style = "text-align: center; background-image: url('/img/seat-process-vip.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;color: white;">
+                                    <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
+                                </div>
+                                <div  v-else-if="seat.seatType === 2 && seat.seatStatus == 1" style="text-align: center; background-image: url('/img/seat-unselect-vip.png'); background-repeat: no-repeat; background-size: 35px 35px; background-position: center; width: 40px; height: 40px; display: inline-block; font-size: 11px; align-items: center; justify-content: center; margin-right: 8px;">
+                                    <span style="margin: auto !important; line-height: 3;">{{ seat.seatLine }}{{ seat.seatNumber }}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="full-width">
@@ -788,7 +788,7 @@ const headersPromotion = ref([
 ])
 
 
-const time = ref(1000)
+const time = ref(600)
 
 const timeFormatted = computed(() => {
   const minutes = Math.floor(time.value / 60); // Lấy số phút
@@ -808,9 +808,13 @@ watch(()=>seatResult.value,(newValue, oldValue) => {
 })
 
 watch(() => time.value, (newValue, oldValue) => {
-    if(parseInt(newValue) === 999){
+    if(parseInt(newValue) === 599){
         bookingStore.resetSeatStatus(route.params.schedule)
 
+    }
+    if(parseInt(newValue) === 0 ) {
+        bookingStore.resetSeatStatus(route.params.schedule)
+        router.replace('/')
     }
 })
 

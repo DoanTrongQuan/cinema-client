@@ -10,7 +10,7 @@
           <NuxtLink :to="`/blog/${blog.id}`"><div class = "rounded w-[109px] h-[79px] md:w-[255px] md:h-[170px] object-cover duration-500 ease-in-out group-hover:opacity-100&quot; scale-100 blur-0 grayscale-0) snipcss0-2-2-3">
             <img class = "w-full h-full" :src = "blog.image"></div></NuxtLink>
           <div class = "flex flex-col">
-            <NuxtLink :to="`/blog/${blog.id}`"><h3 @click = "showBlogDetail(blog.id)">{{ blog.name }}</h3></NuxtLink>
+            <NuxtLink :to="`/blog/${blog.id}`" class="no-underline"><h3 @click = "showBlogDetail(blog.id)">{{ blog.name }}</h3></NuxtLink>
             <p>{{ blog.description }}</p>
           </div>
         </div>

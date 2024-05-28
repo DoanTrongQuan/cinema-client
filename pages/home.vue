@@ -131,12 +131,16 @@ const banner = ref([{ linkImage: '/img/image-caroseol.jpg' }, { linkImage: '/img
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 col-6" style="padding-top: 5px; padding-bottom: 0">
-                                                    <h5 class="card-title h-12" style="color: #337ab7; font-weight: 700">{{ movie.movieName }}</h5>
-                                                    <p  class="card-text" style="font-weight: 700">Thể loại:
-                                                        <span v-for = "(movieType, j) in movie.movieTypeName" :key="j">{{ movieType }} {{    }} </span></p>
-                                                    <p class="card-text"><span style="font-weight: 700">Thời lượng: </span>{{ movie.movieDuration }} phút</p>
-                                                </div>
+                       
+                                                    <div class="col-lg-12 col-6" style="padding-top: 5px; padding-bottom: 0">
+                                                        <NuxtLink :to="`/movie/${movie.slug}`"><h5 class="card-title h-12" style="color: #337ab7; font-weight: 700">{{ movie.movieName }}</h5></NuxtLink>
+                                                        <p  class="card-text" style="font-weight: 700">Thể loại:
+                                                            <span v-for = "(movieType, j) in movie.movieTypeName" :key="j">{{ movieType }} {{    }} </span></p>
+                                                        <p class="card-text"><span style="font-weight: 700">Thời lượng: </span>{{ movie.movieDuration }} phút</p>
+
+                                                    </div>
+                                                
+
                                             </div>
                                         </div>
                                     </div>  

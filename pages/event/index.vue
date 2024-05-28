@@ -4,8 +4,8 @@
         </div>
   <div class = "grid grid-cols-1 xl:grid-cols-6 my-0 mx-auto xl:max-w-[85%] xl:max-w-screen-screen1200 lg:max-w-4xl md:max-w-4xl gap-6 pb-7 px-4">
     
-      <div class="py-4 flex lg:col-span-4 md:gap-[20px] justify-between md:justify-start">
-        <div v-for = "(event,i) in events" :key = "i" class="mb-6 md:mr-0 cursor-pointer relative">
+      <div class="py-4 lg:col-span-4 grid grid-cols-3 md:gap-[20px] justify-between md:justify-start">
+        <div v-for = "(event,i) in events" :key = "i" class="mb-6 md:mr-0 cursor-pointer relative col-span-1">
           <NuxtLink :to="`/event/${event.id}`">
             <div class="relative group">
               <img alt="Cine Với Cạ Cứng - Tụ Tập Vui" loading="lazy" width="200" height="320" decoding="async" data-nimg="1" class="rounded w-[140px] screen375:w-[170px] screen425:w-[180px] h-[235px] md:w-[200px] md:h-[300px] lg:w-[255px] lg:h-[380px] object-cover duration-500 ease-in-out group-hover:opacity-100 scale-100 blur-0 grayscale-0 style-F6g1j" :src="event.image">
