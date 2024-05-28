@@ -414,6 +414,9 @@
                                     </v-data-table>
                                 </v-card>
                             </div>
+                            <div class = "flex justify-end my-4">
+                                <span class = "font-bold text-xl">{{ timeFormatted }}</span>
+                            </div>
                             <div  style="margin-top: 35px;display:  flex;">
                                 <div style="width: 56px;height: 35px;">
                                     <img src="https://www.betacinemas.vn/Assets/global/img/booking/ic-payment.png" style="width: 100%;height: 100%;" alt="">
